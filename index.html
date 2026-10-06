@@ -6,49 +6,22 @@
     <title>Animal Crossing: Wild World</title>
     <style>
         body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background: #000;
-            overflow: hidden;
+            margin: 0; padding: 0; height: 100%;
+            background: #000; overflow: hidden;
             font-family: system-ui, -apple-system, sans-serif;
         }
-        #game-container {
-            width: 100%;
-            height: 100%;
-        }
+        #game-container { width: 100%; height: 100%; }
         #start-screen {
-            position: fixed;
-            inset: 0;
-            background: #111;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            text-align: center;
-            padding: 20px;
+            position: fixed; inset: 0; background: #111; color: #fff;
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center; z-index: 9999; text-align: center; padding: 20px;
         }
         #start-btn {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 18px 40px;
-            font-size: 20px;
-            border-radius: 12px;
-            margin-top: 20px;
-            cursor: pointer;
-            font-weight: bold;
+            background: #4CAF50; color: white; border: none;
+            padding: 18px 40px; font-size: 20px; border-radius: 12px;
+            margin-top: 20px; cursor: pointer; font-weight: bold;
         }
-        #start-btn:active {
-            background: #45a049;
-        }
-        #status {
-            margin-top: 16px;
-            font-size: 14px;
-            opacity: 0.8;
-        }
+        #status { margin-top: 16px; font-size: 14px; opacity: 0.8; }
     </style>
 </head>
 <body>
@@ -68,9 +41,13 @@
             document.getElementById('status').textContent = 'Cargando... espera un momento';
 
             EJS_player = '#game-container';
-            EJS_core = 'nds';                              // Nintendo DS
-            EJS_gameUrl = 'animal-crossing-ds.nds';                     // ← cambia por el nombre de tu ROM
-            EJS_language = 'es-ES';                        // menús del emulador en español
+            EJS_core = 'nds';
+            EJS_gameUrl = 'animal-crossing-ds.nds';              // ← nombre de tu ROM
+            EJS_language = 'es-419';                 // menús en español
+            EJS_disableAutoLang = true;
+            EJS_defaultOptions = {
+                'melonds_firmware_language': '5'   // idioma DS → Español
+            };
             EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
             EJS_startOnLoaded = true;
             EJS_color = '#000000';
